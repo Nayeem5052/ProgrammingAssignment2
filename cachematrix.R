@@ -44,3 +44,16 @@ cacheSolve <- function(x, ...) {
     x$setinverse(inverse)
     inverse
 }
+
+
+## Example
+
+cached_matrix <- makeCacheMatrix(matrix(1:4, 2, 2))
+cacheSolve(cached_matrix)
+cacheSolve(cached_matrix)
+
+## Updating the matrix
+
+cached_matrix$set(matrix(c(1:8, 0), 3, 3))
+cacheSolve(cached_matrix)
+cacheSolve(cached_matrix)
